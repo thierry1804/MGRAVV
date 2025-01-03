@@ -132,7 +132,7 @@ export const AVVCard: React.FC<AVVCardProps> = ({ avv }) => {
         </div>
         
         <div className="mt-4 flex flex-wrap gap-1.5">
-          {avv.technologies.map((tech, index) => (
+          {Array.isArray(avv.technologies) ? avv.technologies.map((tech, index) => (
             <span
               key={index}
               className="px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full
@@ -140,7 +140,7 @@ export const AVVCard: React.FC<AVVCardProps> = ({ avv }) => {
             >
               {tech}
             </span>
-          ))}
+          )) : null}
         </div>
       </div>
 
